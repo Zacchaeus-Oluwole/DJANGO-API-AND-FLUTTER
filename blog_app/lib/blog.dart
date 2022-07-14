@@ -27,7 +27,7 @@ Future<List<Post>> fetchPost() async {
 }
 
 class Post {
-  final String id;
+  final int id;
   final String title;
   final String body;
   final String image;

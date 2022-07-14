@@ -73,14 +73,14 @@ class _BlogPageState extends State<BlogPage> {
       ),
     );
   }
-  Widget BlogCard(Post post){
+  Widget BlogCard(dynamic post){
     return Card(
       elevation: 10.0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(children: <Widget>[
-          Image(image: NetworkImage(post.image)),
+          Image.network(post.image),
           const SizedBox(
             height: 14.0,
           ),
