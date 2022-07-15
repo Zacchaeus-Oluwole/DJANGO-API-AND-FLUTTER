@@ -1,3 +1,4 @@
+import 'package:blog_app/detail.dart';
 import 'package:flutter/material.dart';
 import 'blog.dart';
 
@@ -44,7 +45,7 @@ class _BlogPageState extends State<BlogPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("Welcome to my blog"),
         centerTitle: true,
         backgroundColor: whiteColor,
         foregroundColor: blackColor,
@@ -59,7 +60,10 @@ class _BlogPageState extends State<BlogPage> {
                 itemBuilder: (_, index){
                   return GestureDetector(
                     onTap: (){
-                      int b;
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return BlogDetail(post: snapshot.data![index]);
+                      })
+                      );
                     },
                     child: BlogCard(snapshot.data![index]),
                   );
