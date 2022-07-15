@@ -91,6 +91,7 @@ class _BlogPageState extends State<BlogPage> {
           Text(
             post.title,
             style: const TextStyle(
+
               fontSize: 20.0,
               fontWeight: FontWeight.w700,
               fontFamily: 'Palatino'

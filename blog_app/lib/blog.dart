@@ -3,17 +3,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
-Future<Post> fetchDetail(String id) async {
-  final response = await http.get(
-    Uri.parse('https://blog-api-369.herokuapp.com/api/$id/'),
-  );
-  if(response.statusCode == 200){
-    return Post.fromJson(jsonDecode(response.body));
-  } else {
-    throw Exception('failed to load detail');
-  }
-}
-
 Future<List<Post>> fetchPost() async {
   final response = await http.get(
     Uri.parse('https://blog-api-369.herokuapp.com/api/')
@@ -48,3 +37,14 @@ class Post {
     );
   }
 }
+
+// Future<Post> fetchDetail(String id) async {
+//   final response = await http.get(
+//     Uri.parse('https://blog-api-369.herokuapp.com/api/$id/'),
+//   );
+//   if(response.statusCode == 200){
+//     return Post.fromJson(jsonDecode(response.body));
+//   } else {
+//     throw Exception('failed to load detail');
+//   }
+// }
